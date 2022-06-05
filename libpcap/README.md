@@ -18,3 +18,14 @@ struct pcap_if {
 	bpf_u_int32 flags;	/* PCAP_IF_ interface flags */
 };
 ```
+
+## 打开设备
+```c
+pcap_t *pcap_open_live(const char *device, int snaplen, int promisc, int to_ms, char *errbuf);
+```
+
+## 发送
+```c
+int pcap_inject(pcap_t *p, const void *buf, size_t size);
+int pcap_sendpacket(pcap_t *p, const u_char *buf, int size);
+```
